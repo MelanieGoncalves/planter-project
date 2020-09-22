@@ -20,6 +20,12 @@ function SideBar() {
                     </ListItemIcon>
                     <ListItemText primary="Drafts" />
                 </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DraftsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Drafts" />
+                </ListItem>
             </List>
 
         </div>
