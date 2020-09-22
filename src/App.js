@@ -8,7 +8,7 @@ import styles from './styles/appstyles.module.css'
 function App() {
 
   return (
-    <div className="App">
+    <div className="App" id={styles.container}>
       <TopBar />
       <div id={styles.sideBar}>
         <SideBar />
