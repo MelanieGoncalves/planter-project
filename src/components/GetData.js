@@ -11,7 +11,7 @@ export class GetData extends Component {
     }
 
     componentDidMount() {
-        Axios.get('/api/v1/plants?token=' + process.env.REACT_APP_API_KEY)
+        Axios.get('/api/v1/distributions/9/plants?token=' + process.env.REACT_APP_API_KEY)
             .then(response => {
                 console.log(response)
             }).catch(err => {

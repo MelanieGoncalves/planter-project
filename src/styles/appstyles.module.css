@@ -1,10 +1,11 @@
 #sideBar{
-    width: 15%;
+    min-width: 15%;
+    min-height: 88%;
     background-color: rgb(113, 133, 80);
     color: wheat;
 }
 
 #container{
-    background-color: yellowgreen;
-    height: 700px;
+    background-color: rgb(148, 165, 114);
+    
 }

@@ -1,11 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MenuIcon from '@material-ui/icons/Menu';
 import {
-    AppBar, Toolbar, Typography, IconButton,
-    MenuItem, Switch, FormControlLabel,
-    FormGroup, Menu, requirePropFactory
+    AppBar, Toolbar, Typography, IconButton, MenuItem, Menu
 } from '@material-ui/core';
 
 
@@ -27,10 +24,10 @@ export default function MenuAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
-    const handleChange = (event) => {
+    /* const handleChange = (event) => {
         setAuth(event.target.checked);
     };
-
+ */
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -48,9 +45,9 @@ export default function MenuAppBar() {
                 />
             </FormGroup> */}
 
-            <AppBar position="static" color="inherit">
-                <Toolbar>
-                    <img alt="icon" src={require('../images/planter-icon.png')} style={{ width: "50px", height: "50px" }} />
+            <AppBar position="static" color="inherit" className={classes.appbar}>
+                <Toolbar variant="dense" >
+                    <img alt="icon" src={require('../images/planter-icon.png')} style={{ width: "50px", height: "50px", marginRight: "20px" }} />
                     {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton> */}
