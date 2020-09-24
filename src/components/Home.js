@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Flowers from './Flowers';
 import Zones from './Zones';
-import Home from './Home';
+import Vegetables from './Vegetables';
 
-class Vegetables extends Component {
+class Home extends Component {
   render() {
     return (
       <div>
-        VEGETABLES
+        HOME
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route exact path="/zones" component={props => <Zones {...props} />} />
+          <Route path="/vegetables" component={props => <Vegetables {...props} />} />
           <Route path="/flowers" component={props => <Flowers {...props} />} />
         </Switch>
       </div>
@@ -19,4 +19,4 @@ class Vegetables extends Component {
   }
 }
 
-export default Vegetables
+export default Home

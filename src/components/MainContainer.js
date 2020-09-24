@@ -1,24 +1,19 @@
 import React from 'react';
-import {
-    BrowserRouter,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Flowers from './Flowers';
 import Zones from './Zones';
 import Vegetables from './Vegetables';
+import Home from './Home';
 
 function MainContainer() {
-    return (
-        <BrowserRouter>
-            <Route exact path="/zones" component={Zones} />
-            <Route path="/vegetables" component={Vegetables} />
-            <Route path="/flowers" component={Flowers} />
-        </BrowserRouter>
-
-
-    )
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/zones" component={props => <Zones {...props} />} />
+      <Route path="/vegetables" component={props => <Vegetables {...props} />} />
+      <Route path="/flowers" component={props => <Flowers {...props} />} />
+    </Switch>
+  )
 }
 
 export default MainContainer

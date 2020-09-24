@@ -2,31 +2,32 @@ import React, { Component } from 'react'
 import Axios from 'axios';
 
 export class GetData extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props)
 
-        this.state = {
-
-        }
+    this.state = {
+      zone: props.zone
     }
+  }
 
-    componentDidMount() {
-        Axios.get('/api/v1/distributions/9/plants?token=' + process.env.REACT_APP_API_KEY)
-            .then(response => {
-                console.log(response)
-            }).catch(err => {
-                console.log(err)
-            })
+  componentDidMount(props) {
+    console.log(this.state.zone)
+    Axios.get('/api/v1/distributions/9/plants?token=' + process.env.REACT_APP_API_KEY)
+      .then(response => {
+        console.log(response)
+      }).catch(err => {
+        console.log(err)
+      })
 
-    }
+  }
 
-    render() {
-        return (
-            <div>
+  render() {
+    return (
+      <div>
 
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 export default GetData
