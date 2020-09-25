@@ -4,7 +4,7 @@ import Flowers from './Flowers';
 import Vegetables from './Vegetables';
 import Home from './Home';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, FormControl, InputLabel, MenuItem, Select, List, ListItem } from '@material-ui/core';
+import { Grid, FormControl, Box, InputLabel, MenuItem, Select, Container} from '@material-ui/core';
 import Axios from 'axios'
 
 
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   selectEmpty: {
     marginTop: theme.spacing(2),
   },
+  
 }));
 
 function Zones() {
@@ -47,41 +48,50 @@ function Zones() {
   }, [zoneFromSelect])
 
   return (
-    <div>
-      <Box>
-        <FormControl className={classes.formControl}>
-          <InputLabel>Zone</InputLabel>
-          <Select onChange={handleChange} >
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4</MenuItem>
-            <MenuItem value={5}>5</MenuItem>
-            <MenuItem value={6}>6</MenuItem>
-            <MenuItem value={7}>7</MenuItem>
-            <MenuItem value={8}>8</MenuItem>
-            <MenuItem value={9}>9</MenuItem>
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={11}>11</MenuItem>
-            <MenuItem value={12}>12</MenuItem>
-
-          </Select>
-        </FormControl>
-
-
-        {/* <ul>
-          {
-            posts.map(post => <li key={post.id}>{post.common_name}</li>)
-          }
-        </ul> */}
-
-      </Box>
+      <Container style={{height: "100%", paddingTop: "40px"}}>
+      <Grid container justify="flex-start" style={{height: "50%"}} spacing={3}>       
+        <Grid item>
+          <FormControl className={classes.formControl}>
+            <InputLabel> Select Zone</InputLabel>
+            <Select onChange={handleChange} >
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={7}>7</MenuItem>
+              <MenuItem value={8}>8</MenuItem>
+              <MenuItem value={9}>9</MenuItem>
+              <MenuItem value={10}>10</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+      
+           
+        <Grid item>
+          <img 
+              style={{
+                minHeight: "200px",
+              height: "80%",
+              border: "2px solid black"}}
+              alt="hardiness zone map" 
+              src="https://opimedia.azureedge.net/-/media/images/grt/editorial/articles/online-articles/2011/06-01/understanding-zones/plant_hardiness_zone_map_19.jpg"
+              />
+        </Grid>
+        </Grid>
+        <Grid container>
+       
+        <Grid item>
+          <Box style={{height: "300px"}}> TEST
+          </Box>
+        </Grid>
+      </Grid>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/vegetables" component={props => <Vegetables {...props} />} />
         <Route path="/flowers" component={props => <Flowers {...props} />} />
       </Switch>
-    </div>
+      </Container>
   )
 
 }

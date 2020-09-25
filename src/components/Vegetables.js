@@ -3,12 +3,16 @@ import { Switch, Route } from 'react-router-dom'
 import Flowers from './Flowers';
 import Zones from './Zones';
 import Home from './Home';
+import { Container } from '@material-ui/core';
 
-class Vegetables extends Component {
-  render() {
+function Vegetables() {
+ 
     return (
       <div>
+        <Container style={{paddingTop: "40px"}}>
         VEGETABLES
+        </Container>
+        
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/zones" component={props => <Zones {...props} />} />
@@ -16,7 +20,6 @@ class Vegetables extends Component {
         </Switch>
       </div>
     )
-  }
 }
 
 export default Vegetables

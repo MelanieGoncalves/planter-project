@@ -4,8 +4,7 @@ import Flowers from './Flowers';
 import Zones from './Zones';
 import Vegetables from './Vegetables';
 
-class Home extends Component {
-  render() {
+function Home(){
     return (
       <div>
         HOME
@@ -16,7 +15,6 @@ class Home extends Component {
         </Switch>
       </div>
     )
-  }
 }
 
 export default Home
