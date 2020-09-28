@@ -29,11 +29,7 @@ function Flowers() {
             <IconButton>
               <SearchIcon />
               </IconButton>
-          </form>
-
-          
-
-          
+          </form> 
         </Container>
         
         <Switch>
