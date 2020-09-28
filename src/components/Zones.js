@@ -8,7 +8,7 @@ import { Grid, FormControl, Box,
     InputLabel, MenuItem, Select, 
     Container, Button, TableContainer,
     Paper, Table, TableBody, TableRow,
-    TableCell, TableHead } from '@material-ui/core';
+    TableCell, TableHead, FormLabel, Typography } from '@material-ui/core';
 import axios from 'axios'
 
 
@@ -52,7 +52,12 @@ function Zones() {
 
   return (
       <Container style={{height: "100%", paddingTop: "40px"}}>
-      <Grid container justify="flex-start" style={{height: "50%"}} spacing={3}>       
+      <Grid container justify="flex-start" style={{height: "45%"}} spacing={3}>      
+        <Grid item>
+          <Typography>Hardiness Zones are the USDA standards for determining where plants will thrive most based on climate.</Typography>
+          <Typography>Select the zone you live in to see plants that are recommended for your area.</Typography>
+        </Grid>
+        <Grid container spacing={3}>
         <Grid item>
           <FormControl className={classes.formControl}>
             <InputLabel> Select Zone</InputLabel>
@@ -83,14 +88,16 @@ function Zones() {
               />
         </Grid>
         </Grid>
-        <Grid container>
+        
+        </Grid>
+        <Grid container spacing={3}>
        
         <Grid item>
           <Box style={{height: "300px"}}> 
           {(zoneFromSelect > 1) &&
           <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="a dense table">
-            <TableHead>
+            <TableHead style={{backgroundColor: "gray"}}>
               <TableRow>
                 <TableCell>NAME</TableCell>
                 <TableCell align="right"></TableCell>
